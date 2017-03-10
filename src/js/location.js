@@ -115,6 +115,7 @@
 
     locationsStorageList.forEach(function (location) {
       location.isDeleted = true;
+      location.updated_at = new Date().toLocaleString('en-GB');
     });
     setStorageList(locationsStorageList);
 
