@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.min.css">
+    <title>Просмотр мест</title>
+  </head>
+  <body>
+    <header class="main-header">
+      <div class="logo">
+        <a>
+          <img src="img/logo.png" width="203" height="41" alt="Логотип Просмотра Мест">
+        </a>
+      </div>
+      <div class="main-header__login">
+        <a href="#">Выход</a>
+      </div>
+      <nav class="nav  nav--header  nav--active">
+        <button class="nav__toggle nav__toggle--close" type="button"></button>
+        <ul class="nav__list">
+          <li class="nav__item">
+            <a class="nav__link  nav__link--locations  nav__link--active">Список мест</a>
+          </li>
+          <li class="nav__item">
+            <a href="#" class="nav__link">Избранное</a>
+          </li>
+          <li class="nav__item">
+            <a href="#" class="nav__link  nav__link--history">История</a>
+          </li>
+          <li class="nav__item">
+            <a href="#" class="nav__link">Карта</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main class="main-content">
+      <nav class="nav  nav--sidebar"></nav>
+      <section class="content-container"></section>
+    </main>
+    <div class="overlay  overlay--add-location  invisible">
+      <section class="modal">
+        <button class="btn  modal__close" type="button"></button>
+        <h2 class="modal__title">Создать новую локацию</h2>
+        <form action="create.html" class="form  form--add-location">
+          <div class="form__item">
+            <label for="location_name" class="form__label">Название</label>
+            <input type="text" name="location-name" class="form__input  form__input--text" id="location_name" placeholder="Введите название локации">
+          </div>
+          <div class="form__item">
+            <label for="location_contacts" class="form__label">Контактный телефон</label>
+            <input type="text" name="location-contacts" class="form__input  form__input--text" id="location_contacts" placeholder="Введите телефон локации">
+          </div>
+          <div class="form__item">
+            <label for="location_address" class="form__label">Адрес</label>
+            <input type="text" name="location-address" class="form__input  form__input--text" id="location_address" placeholder="Введите адрес локации">
+          </div>
+          <div class="form__item">
+            <label for="location_image" class="form__label  btn  btn--file">Загрузить Изображение</label>
+            <input type="file" name="location-image" class="form__input  form__input--file" id="location_image">
+          </div>
+          <div class="form__item">
+            <label for="location_description" class="form__label">Особенности</label>
+            <textarea name="location-description" class="form__textarea" id="location_description" placeholder="Введите описание локации"></textarea>
+          </div>
+          <button type="submit" class="btn  btn--submit">Сохранить Локацию</button>
+        </form>
+      </section>
+    </div>
+
+    <template id="location-template" style="display: none;">
+      <article class="place-item">
+        <figure class="place-item__img"></figure>
+        <div class="place-item__descr">
+          <h1 class="place-item__title"><a class="place-item__link  place-item__link--title" href=""></a></h1>
+          <p class="place-item__text  place-item__text--contact"></p>
+          <p class="place-item__text  place-item__text--features"></p>
+          <div class="rating">
+            <ul class="rating__list"></ul>
+            <span class="rating__number"></span>
+          </div>
+          <a class="place-item__link  place-item__link--add-event" href="">Создать событие</a>
+          <button class="btn  btn--delete" type="button">Удалить локацию</button>
+          <button class="btn  btn--star" type="button">Добавить в избранное</button>
+        </div>
+      </article>
+    </template>
+
+    <script src="js/script.min.js"></script>
+  </body>
+</html>

@@ -1,0 +1,19 @@
+.main-header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding-top: 10px;
+  padding-bottom: 54px;
+  padding-left: 21px;
+  padding-right: 58px;
+  color: #fff;
+  text-transform: uppercase;
+  background: $light-green url(../img/main-header-bg.jpg) no-repeat;
+  box-shadow: 0 1px 4px 1px $box-shadow-black;
+}
+
+.main-header__login {
+  a {
+    color: #fff;
+  }
+}

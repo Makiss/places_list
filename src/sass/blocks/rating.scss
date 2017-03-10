@@ -1,0 +1,37 @@
+.rating {
+  display: flex;
+}
+
+.rating__list {
+  margin: 0;
+  margin-right: 10px;
+  padding: 0;
+  font-size: 0;
+  line-height: 0;
+  list-style: none;
+}
+
+.rating__number {
+  font-size: 12px;
+  color: rgba(1, 0, 0, 0.38);
+}
+
+.rating__star {
+  display: inline-block;
+  width: 20px;
+  height: 19px;
+  background-image: $spritesheet-path;
+  background-repeat: no-repeat;
+
+  &--yellow {
+    background-position: -84px -41px;
+  }
+
+  &--yellow-white {
+    background-position: -24px -41px;
+  }
+
+  &--white {
+    background-position: -64px -41px;
+  }
+}

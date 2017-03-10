@@ -1,0 +1,66 @@
+/*
+Icon classes can be used entirely standalone. They are named after their original file names.
+
+Example usage in HTML:
+
+`display: block` sprite:
+<div class="icon-home"></div>
+
+To change `display` (e.g. `display: inline-block;`), we suggest using a common CSS class:
+
+// CSS
+.icon {
+  display: inline-block;
+}
+
+// HTML
+<i class="icon icon-home"></i>
+*/
+.icon-close-menu {
+  background-image: url(../../build/img/spritesheet.png);
+  background-position: -104px -41px;
+  width: 18px;
+  height: 12px;
+}
+.icon-grey-star {
+  background-image: url(../../build/img/spritesheet.png);
+  background-position: -44px -41px;
+  width: 20px;
+  height: 19px;
+}
+.icon-logo {
+  background-image: url(../../build/img/spritesheet.png);
+  background-position: 0px 0px;
+  width: 203px;
+  height: 41px;
+}
+.icon-open-menu {
+  background-image: url(../../build/img/spritesheet.png);
+  background-position: -122px -41px;
+  width: 18px;
+  height: 12px;
+}
+.icon-trash {
+  background-image: url(../../build/img/spritesheet.png);
+  background-position: 0px -41px;
+  width: 24px;
+  height: 24px;
+}
+.icon-white-star {
+  background-image: url(../../build/img/spritesheet.png);
+  background-position: -64px -41px;
+  width: 20px;
+  height: 19px;
+}
+.icon-yellow-star {
+  background-image: url(../../build/img/spritesheet.png);
+  background-position: -84px -41px;
+  width: 20px;
+  height: 19px;
+}
+.icon-yellow-white-star {
+  background-image: url(../../build/img/spritesheet.png);
+  background-position: -24px -41px;
+  width: 20px;
+  height: 20px;
+}

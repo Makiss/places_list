@@ -1,0 +1,74 @@
+.place-item {
+  position: relative;
+  display: flex;
+  margin-bottom: -1px;
+  padding-left: 16px;
+  padding-right: 26px;
+  padding-top: 16px;
+  padding-bottom: 18px;
+  border: 1px solid #e0e0e0;
+}
+
+.place-item__img {
+  flex-basis: 152px;
+  flex-grow: 0;
+  flex-shrink: 0;
+  margin: 0;
+  margin-right: 24px;
+  height: 152px;
+}
+
+.place-item__no-photo {
+  position: relative;
+
+  &::before {
+    content: 'У этого отеля пока нет фото';
+    position: absolute;
+    top: 50%;
+    z-index: 0;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 16px;
+    color: #aaa8a1;
+    text-align: center;
+  }
+}
+
+.place-item__descr {
+  padding-top: 1px;
+}
+
+.place-item__title {
+  margin: 0;
+  margin-top: 7px;
+  margin-bottom: 10px;
+}
+
+.place-item__link {
+  color: #000;
+
+  .place-item:hover & {
+    color: #1e88e5;
+  }
+
+  &--add-event {
+    position: absolute;
+    bottom: 16px;
+    right: 72px;
+    text-transform: uppercase;
+    color: transparent;
+  }
+}
+
+.place-item__text {
+  margin: 0;
+  margin-bottom: 15px;
+
+  &--contact {
+    color: #747474;
+
+    span {
+      color: #000;
+    }
+  }
+}

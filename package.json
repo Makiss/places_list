@@ -1,0 +1,41 @@
+{
+  "name": "Places_list",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Страница мест",
+  "author": "Сёмушкин Максим",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Makiss/places_list"
+  },
+  "homepage": "https://github.com/Makiss/places_list",
+  "devDependencies": {
+    "autoprefixer": "6.3.6",
+    "css-mqpacker": "^5.0.1",
+    "editorconfig-tools": "0.1.1",
+    "eslint": "3.9.0",
+    "eslint-config-htmlacademy": "0.2.x",
+    "grunt": "1.0.1",
+    "grunt-browser-sync": "2.2.0",
+    "grunt-contrib-clean": "^1.0.0",
+    "grunt-contrib-concat": "^1.0.1",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-htmlmin": "^2.3.0",
+    "grunt-contrib-imagemin": "^1.0.1",
+    "grunt-contrib-uglify": "^2.2.0",
+    "grunt-contrib-watch": "1.0.0",
+    "grunt-csso": "^1.0.0",
+    "grunt-postcss": "0.8.0",
+    "grunt-sass": "1.2.0",
+    "grunt-spritesmith": "^6.4.0",
+    "load-grunt-tasks": "^3.5.0"
+  },
+  "scripts": {
+    "test": "eslint js/",
+    "build": "grunt build",
+    "start": "npm run build && grunt serve"
+  },
+  "engines": {
+    "node": "5.11"
+  }
+}
