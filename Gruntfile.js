@@ -50,7 +50,7 @@ module.exports = function (grunt) {
         },
         files: [{
           expand: true,
-          src: ['build/img/**/*.{png,jpg,gif}']
+          src: ['build/img/**/*.{png,jpg,gif,svg}']
         }]
       }
     },
@@ -130,15 +130,15 @@ module.exports = function (grunt) {
 
     watch: {
       html: {
-        files: ['*.html'],
-        tasks: ['copy:html', 'htmlmin']
+        files: ['src/*.html'],
+        tasks: ['htmlmin']
       },
       js: {
         files: ['src/js/**/*.js'],
         tasks: ['concat', 'uglify']
       },
       style: {
-        files: ['sass/**/*.{scss,sass}'],
+        files: ['src/sass/**/*.scss'],
         tasks: ['sass', 'postcss', 'csso'],
         options: {
           spawn: false

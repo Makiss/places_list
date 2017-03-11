@@ -21,10 +21,21 @@ window.utils = (function () {
     return locationIndex;
   }
 
+  function createButton(type, classList, textContent, clickEventListener, container) {
+    var button = document.createElement('button');
+    button.type = type;
+    button.className = classList;
+    button.textContent = textContent;
+    button.addEventListener('click', clickEventListener);
+
+    container.appendChild(button);
+  }
+
   return {
     toggleNavLink: toggleNavLink,
     findLocationElementIndex: findLocationElementIndex,
     locationsDir: LOCATIONS_DIR,
-    noLocationsMessage: noLocationsMessage
+    noLocationsMessage: noLocationsMessage,
+    createButton: createButton
   };
 })();

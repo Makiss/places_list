@@ -28,11 +28,23 @@ var container = document.querySelector('.content-container');
     });
 
     if (!allLocationsDeleted) {
-      createRemoveLocationsButton();
+      window.utils.createButton(
+          'button',
+          'btn  btn--remove-locations',
+          'Удалить все локации',
+          onRemoveLocationsButtonClick,
+          container
+        );
     } else {
       container.appendChild(containerText);
     }
-    createAddLocationsButton();
+    window.utils.createButton(
+        'button',
+        'btn  btn--circle  btn--add-location',
+        '+',
+        onAddLocationButtonClick,
+        container
+      );
 
     if (!locationsStorageList || locationsStorageList.length === 0) {
       localStorage.setItem('locations-list', JSON.stringify([]));
@@ -93,17 +105,10 @@ var container = document.querySelector('.content-container');
     evt.preventDefault();
 
     var form = this;
-    var location = {};
+    var location;
     var locationElement;
 
-    location.name = form.location_name.value;
-    location.address = form.location_address.value;
-    location.contacts = form.location_contacts.value;
-    location.description = form.location_description.value;
-    location.preview = locationImage;
-    location.rating = {};
-    location.rating.average = 0.00;
-    location.rating.quantity = 0;
+    location = createLocationFromForm(form);
 
     locationElement = new Location(location);
     locationElement.render();
@@ -112,7 +117,13 @@ var container = document.querySelector('.content-container');
 
     if (container.firstChild.textContent === window.utils.noLocationsMessage) {
       container.firstChild.textContent = '';
-      createRemoveLocationsButton();
+      window.utils.createButton(
+          'button',
+          'btn  btn--remove-locations',
+          'Удалить все локации',
+          onRemoveLocationsButtonClick,
+          container
+        );
     }
     container.appendChild(fragment);
     modalLocationCloseButton.click();
@@ -143,26 +154,6 @@ var container = document.querySelector('.content-container');
     container.appendChild(containerText);
   }
 
-  function createRemoveLocationsButton() {
-    var button = document.createElement('button');
-    button.type = 'button';
-    button.className = 'btn  btn--remove-locations';
-    button.textContent = 'Удалить все локации';
-    button.addEventListener('click', onRemoveLocationsButtonClick);
-
-    container.appendChild(button);
-  }
-
-  function createAddLocationsButton() {
-    var button = document.createElement('button');
-    button.type = 'button';
-    button.className = 'btn  btn--circle  btn--add-location';
-    button.textContent = '+';
-    button.addEventListener('click', onAddLocationButtonClick);
-
-    container.appendChild(button);
-  }
-
   function onLocationsLinkClick(evt) {
     evt.preventDefault();
 
@@ -171,5 +162,22 @@ var container = document.querySelector('.content-container');
     window.utils.toggleNavLink(activeNavLink, locationsLink);
     window.container.innerHTML = '';
     init();
+  }
+
+  function createLocationFromForm(form) {
+    var location = {};
+
+    location.name = form.location_name.value;
+    location.address = form.location_address.value;
+    location.contacts = form.location_contacts.value;
+    location.description = form.location_description.value;
+    location.preview = locationImage;
+    location.rating = {};
+    location.rating.average = 0.00;
+    location.rating.quantity = 0;
+
+    form.reset();
+
+    return location;
   }
 })();

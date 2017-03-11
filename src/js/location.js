@@ -75,7 +75,9 @@
     contentImage.addEventListener('error', function () {
       onContentImageError(imageWrapper);
     });
-    contentImage.src = this._data.preview;
+    if (this._data.preview) {
+      contentImage.src = this._data.preview;
+    }
     contentImage.alt = this._data.name;
   };
 
@@ -178,7 +180,9 @@
 
   function onContentImageLoad(imageLoadTimeout, imageWrapper, contentImage) {
     clearTimeout(imageLoadTimeout);
-    imageWrapper.appendChild(contentImage);
+    if (contentImage) {
+      imageWrapper.appendChild(contentImage);
+    }
   }
 
   function onContentImageError(imageWrapper) {

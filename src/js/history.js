@@ -49,6 +49,7 @@ window.locationsHistory = (function () {
       var locationListItem = document.createElement('li');
       var locationDateModified = document.createElement('time');
       var locationDate = location[dateParamName];
+
       locationDateModified.setAttribute('datetime', locationDate.replace(/,/, ''));
       locationDateModified.textContent = locationDate;
       locationListItem.textContent = location.name + ' - ';
