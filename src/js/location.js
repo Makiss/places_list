@@ -19,9 +19,9 @@
     var deleteLocationButton;
 
     if ('content' in template) {
-      this.element = template.content.children[0].cloneNode(true);
+      this.element = template.content.querySelector('article').cloneNode(true);
     } else {
-      this.element = template.children[0].cloneNode(true);
+      this.element = template.querySelector('article').cloneNode(true);
     }
 
     this.element.querySelector('.place-item__title').textContent = this._data.name;
